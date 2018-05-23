@@ -8,22 +8,41 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Helvetica" , Arial,sans-serif;;
-
 }
 
-.background {
-    background: url("image/Bitmap.png");
-    height: 1000px;
-    width: 100%;
-
-
+.l_header {
+    background-color: black; 
 }
 
-.b_menu_3{
+.app_logo {
+    margin-left: 4.5%;
+    display: inline-block;
+    transition: opacity 0.3s;
+    
+}
+
+.app_menu {
+
+    float: right;
+    height: 35px;
+    line-height: 35px;
+}
+
+.app_menu_item {
     text-decoration: none;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.34px;
+    margin-right: 40px;
+    transition: color 0.3s;
+    display: inline-block;
 }
 
-
+.b_menu_3 {
+    padding-top: 35px;
+    display: block;
+    
+}
 
 .app_name {
     text-decoration: none;
@@ -35,34 +54,29 @@ body {
     margin-left: 16px;
 }
 
+.m_width {
+    max-width: 1002px;
+    overflow: hidden;
+}
+
+.b_main {
+    margin-top: 125px;
+}
+
+.caption {
+    
+    font-size: 34px;
+    color: #fff;
+    letter-spacing: 0.3px;
+    line-height: 44px;
+    max-width: 710px;
+}
+
 .button {
-    float: left;
-    padding-bottom: 300px;
     width: 9%;
     margin-left: 11%;
 
 }
-
-.text_bot {
-
-    border-radius: 2px;
-    font-size: 13px;
-    padding: 10px 10px 10px 10px;
-    background-color: #1E90FF;
-}
-.text_bot a {
-    color: #F5F5F5;
-    text-align: center;
-    display: block;
-    text-decoration: none;
-
-}
-
-.text_bot:hover {
-    opacity: 0.8;
-    transition: 400ms;
-}
-
 
 
 .l_container_page {
@@ -375,9 +389,6 @@ table {
     top: 0;
 }
 
-.img_text_1 {
-
-}
 
 
 
