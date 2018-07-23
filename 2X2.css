@@ -1,0 +1,39 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+
+.l_header {
+background-image: url(svg/image.png);
+}
+
+.m_width {
+	margin-top: 58px;
+	margin-left: 114px;
+}
+
+td:last-child {
+	text-align: right;
+}
+
+.table {
+	width: 100%;
+    display: inline-block;
+}
+
+.text {
+	margin-left: 28px;
+
+}
+
+tr {
+	width: 100%;
+	display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+tbody {
+	width: 100%;
+}
