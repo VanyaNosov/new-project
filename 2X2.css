@@ -1,39 +1,138 @@
 body {
+	color: white;
 	margin: 0;
 	padding: 0;
+	font-family: 'Open Sans', sans-serif;
 }
 
 
-.l_header {
-background-image: url(svg/image.png);
-}
-
-.m_width {
-	margin-top: 58px;
-	margin-left: 114px;
-}
-
-td:last-child {
-	text-align: right;
-}
-
-.table {
+.l_header {	
 	width: 100%;
-    display: inline-block;
+	position: relative;
+	display: block;
+	background-size: cover;
+	background: url(svg/image.png) no-repeat;
+}
+.b_header {
+	width: 80%;
+	margin-left: 114px;
+	padding-top: 58px; 
+	position: relative;
+	display: block;
+	font-size: 60px;
 }
 
 .text {
-	margin-left: 28px;
+	margin-top: 0;
+	font-size: 18px;
+}
+
+.number {
+	margin-bottom: 200px;
+	position: relative;
+}
+
+.info {
+	margin-top: 15px;
+	vertical-align: top;
+	font-size: 17px;
+	display: inline-block;
+}
+
+.two_by_two {
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.container {
+	text-align: center;
+}
+
+.caption {
+	font-size: 50px;
+}
+
+.text_1 {
+	font-size: 30px;
+	text-align: center;
+}
+
+.button {
+	padding-bottom: 200px;
+    background: #41d15e;
+    color: white;
+    border-radius: 35px;
+    display: block;
+	width: 397px;
+	height: 30px;
+    padding: 20px 0;
+    margin: 0px auto;
+    text-decoration: none;
+    text-align: bottom;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 50px
+}
+
+.container_2 {
+	width: 930px;
+    margin: 0 auto;
+	margin-top: 112px;
+	text-align: center;
+}
+
+.caption_2 {
+	position: relative;
+	display: block;
+	color: #1547fe;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0.36px;
+}
+.services_item {
+	margin-left: 60px;
+	margin-top: 85px;
+	width: 400px;
+	float: left;
+	text-align: center;
+}
+
+.services_item_last {
+	text-align: right;
+	margin-top: 85px;
+	width: 400px;
+	float: right;
+	text-align: center;
+}
+
+.text_2 {
+	height: 64px;
+	color: #475059;
+	font-size: 18px;
+	color: #1d1e23;
+	letter-spacing: 0.18px;
+	font-weight: 400;
 
 }
 
-tr {
+.color {
+	font-weight: bold;
+	color: #1d1e23;
+}
+
+.caption_3 {
+	display: block;
+	color: #1547fe;
+    font-size: 36px;
+}
+
+.container_3 {
 	width: 100%;
-	display: table-row;
-    vertical-align: inherit;
-    border-color: inherit;
+	text-align: center;
+	display: block;
+    background-color: #efefef;
+
 }
 
-tbody {
-	width: 100%;
-}
