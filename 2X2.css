@@ -96,6 +96,7 @@ color: black
 }
 
 .icon {
+	margin-bottom: 23px;
 	text-align: center;
 }
 
@@ -109,9 +110,15 @@ color: black
 }
 
 .icon_container {
+	vertical-align: top;
 	width: calc(100% / 2 - 131px);
 	display: inline-block;
 	margin-right: 131px;
+}
+
+.info_block {
+	color: black;
+	font-weight: bold;
 }
 
 .icon_container:last-child {
@@ -133,3 +140,266 @@ color: black
 	display: block;
 }
 
+.container_3 {
+	background-color: #efefef;
+}
+
+.caption_3 {
+	text-align: center;
+	color: #1547fe;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0.36px;
+}
+
+.m_width_2 {
+	margin: 112px 113px 0px 113px;
+}
+
+.icon_container_2 {
+	width: calc(100% / 2 - 24px);
+}
+
+.icon_image_2 {
+	display: block;
+	width: 558px;
+}
+.icon_container_2 {
+	display: inline-block;
+}
+.title2 {
+	text-align: center;
+	height: 19px;
+	color: #1d1e23;
+	font-size: 24px;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 1.2px;
+}
+
+.description {
+    margin-bottom: 24px;
+	background-color: white;
+	width: calc(100% - 162px);
+}
+
+.text_3 {
+	margin-top: 22px;
+	display: block;
+	text-align: center;
+}
+
+.description:last-child {
+	margin-bottom: 115px;
+}
+
+.caption_why_choose_us {
+	font-weight: bold;
+	text-align: center;
+	color: #1547fe;
+    font-size: 36px;
+    letter-spacing: 0.36px;
+}
+
+.description_2 {
+	margin-bottom: 62px;
+	font-weight: bold;
+	text-align: center;
+	color: #1d1e23;
+	font-size: 18px;
+	letter-spacing: 0.18px;
+}
+
+.Why_choose_us_width {
+	margin: 62px 177px 0 177px;
+}
+
+.svg_icon {
+	margin-bottom: 29px;
+	text-align: center;
+}
+
+.icon_svg_1 {
+}
+
+.tittle_3 {
+	margin-bottom: 19px;
+	font-weight: bold;
+	display: inline-block;
+	color: black;
+	font-size: 18px;
+}
+
+.text_tittle {
+
+	text-align: center;
+	color: red;
+}
+
+.icon_container_3 {
+	vertical-align: top;
+	margin-bottom: 102px;
+	width: calc(100% / 3 - 107px);
+	display: inline-block;
+}
+
+.container_of_objects {
+	text-align: center;
+}
+
+.text_description {
+	color: black;
+}
+
+.repair_costs {
+	background-color: #efefef;
+}
+
+.caption_repair_costs {
+	margin-bottom: 47px;
+	font-weight: bold;
+	text-align: center;
+	color: #1547fe;
+    font-size: 36px;
+    letter-spacing: 0.36px;
+}
+
+.repair_costs_width {
+	margin: 0px 136px 0px 136px;
+}
+
+.img_repairs {	
+	display: inline-block;
+}
+
+.home_rooms {	
+	text-align: center;
+}
+
+.rooms {
+	margin-bottom: 110px;
+	margin-right: 24px;
+}
+
+.caption_podschet_cost_of_repairs {
+	margin-top: 110px;
+	margin-bottom: 66px;
+	font-weight: bold;
+	text-align: center;
+	color: #1547fe;
+    font-size: 36px;
+    letter-spacing: 0.36px;
+}
+
+.m_width_3 {
+	margin: 0px 198px 0px 199px;
+}
+
+
+.room_button {
+	font-weight: bold;
+	color: white;
+	font-size: 18px;
+	letter-spacing: 0.18px;
+	padding: 10px 58px 10px 55px;
+	box-shadow: inset 0 4px 4px rgba(0, 0, 0, 0.15);
+	border-radius: 22px;
+	border: 1px solid #1744fe;
+	color: #1547fe;
+	text-decoration: none;
+}
+
+.button_2 {
+	text-align: center;
+	margin-right: 24px;
+	display: inline-block;
+}
+
+.podschet_cost_of_repairs {
+	text-align: center;
+}
+
+.width {
+	position: relative;
+	margin: 105px 322px 105px 322px;
+}
+
+.check_in {
+	margin-top: 221px;
+}
+
+.drawing {
+	display: inline-block;
+	position: absolute;
+	width: 100%;
+	background-size: cover;
+}
+
+.application {
+	color: black;
+	border-radius: 5px;
+	margin-top: 11px;
+	position: relative;
+	width: 397px;
+	height: 37px;
+	background-color: white; 
+}
+
+.block_info {
+	
+}
+
+.button_3 {
+	padding: 27px 0px 27px 0px;
+	text-align: center;
+    background: #41d15e;
+    color: white;
+    border-radius: 35px;
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+	font-size: 18px;
+	margin-top: 53px;
+   
+}
+
+.button_info {
+	text-align: center;
+	width: 349px;
+}
+
+.caption_partners {
+	margin-bottom: 21px;
+	font-weight: bold;
+	text-align: center;
+	color: #1547fe;
+    font-size: 36px;
+	letter-spacing: 0.36px;
+}
+
+.img_container_2 {
+	display: inline-block;
+}
+
+.text_info {
+	font-weight: bold;
+	text-align: center;
+	color: black;
+}
+
+.width_info {
+	margin: 0px 322px 0px 322px;
+}
+
+.icon_partners {
+	padding-left: 23px;
+	vertical-align: middle;
+	display: inline-block;
+}
+
+.svg_icon_partners {
+	margin-top: 60px;
+	text-align: center;
+}
