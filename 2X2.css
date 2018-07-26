@@ -7,18 +7,19 @@ body {
 
 
 .l_header {	
+color: black
+}
+
+.img_container {
+}
+
+.background_image {
 	width: 100%;
-	position: relative;
-	display: block;
-	background-size: cover;
-	background: url(svg/image.png) no-repeat;
+	position: absolute;
 }
 .b_header {
-	width: 80%;
 	margin-left: 114px;
 	padding-top: 58px; 
-	position: relative;
-	display: block;
 	font-size: 60px;
 }
 
@@ -29,7 +30,8 @@ body {
 
 .number {
 	margin-bottom: 200px;
-	position: relative;
+	display: inline-block;
+	font-size: 21px;
 }
 
 .info {
@@ -40,6 +42,7 @@ body {
 }
 
 .two_by_two {
+	width: 80%;
 	vertical-align: middle;
 	display: inline-block;
 }
@@ -76,63 +79,57 @@ body {
 }
 
 .container_2 {
-	width: 930px;
-    margin: 0 auto;
 	margin-top: 112px;
-	text-align: center;
 }
 
 .caption_2 {
-	position: relative;
-	display: block;
+	text-align: center;
 	color: #1547fe;
     font-size: 36px;
     font-weight: 400;
     line-height: 48px;
     letter-spacing: 0.36px;
 }
-.services_item {
-	margin-left: 60px;
-	margin-top: 85px;
-	width: 400px;
-	float: left;
+
+.m_width {
+	margin: 112px 260px 0px 290px;
+}
+
+.icon {
 	text-align: center;
 }
 
-.services_item_last {
-	text-align: right;
+.icon_image {
+	display: block;
+	margin: 0 auto;
+}
+
+.text_3 {
+	color: black;
+}
+
+.icon_container {
+	width: calc(100% / 2 - 131px);
+	display: inline-block;
+	margin-right: 131px;
+}
+
+.icon_container:last-child {
+	margin-right: 0;
+}
+
+.image_container_2 {
 	margin-top: 85px;
-	width: 400px;
-	float: right;
-	text-align: center;
 }
 
 .text_2 {
-	height: 64px;
-	color: #475059;
-	font-size: 18px;
-	color: #1d1e23;
-	letter-spacing: 0.18px;
-	font-weight: 400;
-
-}
-
-.color {
-	font-weight: bold;
-	color: #1d1e23;
-}
-
-.caption_3 {
 	display: block;
-	color: #1547fe;
-    font-size: 36px;
-}
-
-.container_3 {
-	width: 100%;
+	color: black;
 	text-align: center;
-	display: block;
-    background-color: #efefef;
+}
 
+
+.services_img {
+	display: block;
 }
 
