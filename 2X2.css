@@ -7,10 +7,11 @@ body {
 
 
 .l_header {	
+	padding-bottom: 200px;
 	height: 100%;;
-color:  white;
-background-image: url("svg/image.png");
-background-size: cover;
+	color:  white;
+	background-image: url("svg/image.png");
+	background-size: cover;
 }
 
 .img_container {
@@ -145,15 +146,17 @@ background-size: cover;
 }
 
 .container_3 {
+	margin-top: 110px;
+	padding-top: 112px;
 	background-color: #efefef;
 }
 
 .caption_3 {
+	margin-bottom: 21px;
 	text-align: center;
 	color: #1547fe;
     font-size: 36px;
-    font-weight: 400;
-    line-height: 48px;
+	font-weight: bold;
     letter-spacing: 0.36px;
 }
 
@@ -404,6 +407,8 @@ background-size: cover;
 }
 
 .check_in {
+	margin-bottom: 111px;
+	padding-bottom: 105px;
 	background-image: url("svg/background.png");
 	background-size: cover;
 }
