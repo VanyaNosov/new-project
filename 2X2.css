@@ -33,7 +33,9 @@ body {
 }
 
 .number {
-	margin-bottom: 200px;
+	color: #ffffff;
+	margin-right: 113px;
+	float: right;
 	display: inline-block;
 	font-size: 21px;
 }
@@ -45,7 +47,9 @@ body {
 	display: inline-block;
 }
 
-.two_by_two {
+.logo {
+	margin-bottom: 200px;
+	max-width: 350px;
 	width: 80%;
 	vertical-align: middle;
 	display: inline-block;
@@ -55,57 +59,55 @@ body {
 	text-align: center;
 }
 
-.caption {
+.caption_header {
 	font-size: 50px;
 }
 
-.text_1 {
+.container_text {
+	margin-bottom: 66px;
 	font-size: 30px;
 	text-align: center;
 }
 
 .button {
-	margin-bottom: 100px;
-    background: #41d15e;
-    color: white;
-    border-radius: 35px;
-    display: block;
-	width: 397px;
-	height: 30px;
-    padding: 20px 0;
-    margin: 0px auto;
-    text-decoration: none;
-    text-align: bottom;
-    text-transform: uppercase;
-    font-weight: bold;
-	font-size: 18px;
-	margin-top: 66px;
-    
+	
+	vertical-align: middle;
+	text-align: center;
+	margin: auto;
+	display: inline-block;
+	color: white;
+	text-decoration: none;
+	font-size: 27px;
+	padding: 21px 61px 23px 61px;
+	background: #41d15e;
+	border-radius: 37px;
 }
 
 .container_2 {
+	vertical-align: top;
+	text-align: center;
 	margin-top: 112px;
 }
 
-.caption_2 {
+.caption {
+	font-weight: bold;
 	text-align: center;
 	color: #1547fe;
     font-size: 36px;
-    font-weight: 400;
-    line-height: 48px;
     letter-spacing: 0.36px;
 }
 
-.m_width {
-	margin: 112px 260px 0px 290px;
-}
+
 
 .icon {
+	max-height: 90px;
+	display: inline-block;
 	margin-bottom: 23px;
 	text-align: center;
 }
 
 .icon_image {
+	text-align: center;
 	display: block;
 	margin: 0 auto;
 }
@@ -115,11 +117,44 @@ body {
 }
 
 .icon_container {
+	max-width: 450px;
+	min-width: 400px;
+	text-align: center;
+	max-width: 300px;
 	vertical-align: top;
 	width: calc(100% / 2 - 131px);
 	display: inline-block;
 	margin-right: 131px;
 }
+
+@media only screen and (max-width: 952px) {
+	
+.icon_container {
+	margin-bottom: 100px;
+	margin-right: 0;
+}
+
+.image_container {
+	margin-top: 85px;
+}
+
+.caption {
+	margin-bottom: 50px;
+}
+
+.text_2 {
+	font-size: 18px;
+}
+
+}
+
+@media only screen and (max-width: 822px) {
+	.text_2 {
+		margin-top: 23px;
+		font-size: 20px;
+	}
+}
+
 
 .info_block {
 	color: black;
@@ -130,12 +165,16 @@ body {
 	margin-right: 0;
 }
 
-.image_container_2 {
+.image_container {
+	text-align: center;
 	margin-top: 85px;
 }
 
 .text_2 {
-	display: block;
+	vertical-align: top;
+	max-height: 120px;
+	min-width: 405px;
+	display: inline-block;
 	color: black;
 	text-align: center;
 }
@@ -151,7 +190,7 @@ body {
 	background-color: #efefef;
 }
 
-.caption_3 {
+.caption {
 	margin-bottom: 21px;
 	text-align: center;
 	color: #1547fe;
@@ -165,7 +204,18 @@ body {
 }
 
 .icon_container_2 {
+	min-width: 558px;
 	width: calc(100% / 2 - 24px);
+}
+
+@media only screen and (max-width: 1185px) {
+	.icon {
+		margin-bottom: 0px;
+	}
+
+	.text_2 {
+		margin-top: 23px;
+	}
 }
 
 .icon_image_2 {
@@ -174,6 +224,10 @@ body {
 }
 
 .icon_container_2 {
+	text-align: center;
+	margin-right: 24px;
+	max-width: 558px;
+	vertical-align: top;
 	display: inline-block;
 }
 .title2 {
@@ -185,11 +239,26 @@ body {
 	letter-spacing: 1.2px;
 }
 
+.image_container_3 {
+	text-align: center;
+}
+
+@media only screen and (max-width: 1412px) {
+	.m_width_2 {
+		margin: 0px;
+	}
+}
+
 .description {
-    margin-bottom: 24px;
+	padding-bottom: 45px;
+	padding-top: 36px;
+	min-height: 112px;
+	min-width: 558px;
+	max-width: 558px;
 	background-color: white;
 	width: calc(100% - 162px);
 }
+
 
 .text_3 {
 	margin-top: 22px;
@@ -201,7 +270,7 @@ body {
 	margin-bottom: 115px;
 }
 
-.caption_why_choose_us {
+.caption {
 	font-weight: bold;
 	text-align: center;
 	color: #1547fe;
@@ -223,14 +292,17 @@ body {
 }
 
 .svg_icon {
+	min-height: 97px;
 	margin-bottom: 29px;
 	text-align: center;
 }
 
 .icon_svg_1 {
+	display: inline-block;
 }
 
 .tittle_3 {
+	font-weight: bold;
 	margin-bottom: 19px;
 	font-weight: middle;
 	display: inline-block;
@@ -239,24 +311,57 @@ body {
 }
 
 .text_tittle {
-
+	min-width: 328px;
 	text-align: center;
 	color: red;
 }
 
 .icon_container_3 {
+	max-height: 281px;
+	max-width: 328px;
+	min-height: 281px;
+	min-width: 328px;
+	margin-right: 103px;
+	text-align: center;
 	vertical-align: top;
 	margin-bottom: 102px;
 	width: calc(100% / 3 - 107px);
 	display: inline-block;
 }
 
+@media only screen and (max-width: 1672px) {
+.icon_container_3	{
+	max-height: 350px;
+}
+
+.tittle_3 {
+	font-size: 23px;
+}
+
+.text_tittle {
+	font-size: 18px;
+}
+
+}
+
+@media only screen and (max-width: 1237px) {
+	.Why_choose_us_width {
+		margin: 0px;
+	}
+	.caption_why_choose_us {
+		margin-top: 109px;
+	}
+
+}
+
 .container_of_objects {
+	vertical-align: top;
 	text-align: center;
 }
 
 .text_description {
-	color: black;
+	color: #475059;
+	font-weight: bold;
 }
 
 .repair_costs {
@@ -319,9 +424,28 @@ body {
 }
 
 .button_2 {
+	min-width: 242px;
 	text-align: center;
 	margin-right: 24px;
 	display: inline-block;
+}
+
+.button_2:nth-last-child(2) {
+	margin-right: 0px;
+}
+
+@media only screen and (max-width: 1467px) {
+.button_2:nth-last-child(2) {
+	margin-right: 24px;
+	margin-top: 30px;
+}
+}
+
+@media only screen and (max-width: 950px) {
+.button_2{
+	margin-top: 30px;
+}	
+	
 }
 
 .checkbox_block {
