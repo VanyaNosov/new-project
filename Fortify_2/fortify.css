@@ -1,0 +1,250 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.container_one {
+    margin-bottom: 330px;
+    height: 1187px;
+    background-color: black;
+}
+
+.header {
+    margin-bottom: 127px;
+    padding: 40px 67px;
+}
+
+.logo {
+    display: inline-block;
+    max-width: 28px;
+    width: 28px;
+}
+
+.logo_image { 
+    background-size: cover; 
+    background-image: url("image_fortify/Page_1.png");
+    height: 35px;
+    background-repeat: no-repeat;
+}
+
+.text_logo {
+    vertical-align: top;
+    color: white;
+    font-size: 17px;
+    padding-left: 16px;
+    display: inline-block;
+}
+
+.item {
+    opacity: 0.7;
+    color: #ffffff;
+    font-size: 15px;  
+    padding-right: 39px;
+    color: white;
+}
+
+.item:last-child {
+    padding: 0px;
+}
+
+.menu_block {
+    vertical-align: middle;
+    float: right;
+}
+
+.width {
+    margin-left: 191px;;
+}
+
+.tittle {
+    padding-bottom: 19px;
+    color: #ffffff;
+    font-size: 34px;
+}
+
+.text_block {
+    margin-bottom: 42px;
+    opacity: 0.52;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.button {
+    margin-bottom: 73px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 15px 11px 15px;
+    border-radius: 2px;
+    background-color: #1e8cfe;
+}
+
+.button:hover {
+    transition: 0.3s;
+    opacity: 0.9;
+}
+
+.text_button {  
+    color: white;
+    font-size: 13px;
+}
+
+.image_block {
+    display: block;
+    overflow: auto;
+    box-shadow: 0 0 15px;
+    text-align: center;
+    height: 688px;
+    background-image: url("image_fortify/Root.png"); 
+    width: 1040px;
+    position: absolute;
+    max-width: 1040px;
+    top: 83%;
+    left: 23%;
+}
+
+.dots_block {
+    margin-bottom: 74px;
+    width: 100%;
+    text-align: center;
+    
+}
+
+.dots {
+    margin-right: 20px;
+    border: 1px solid gray;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dots:last-child {
+    margin-right: 0px;
+}
+
+.dots_blue {
+    margin-right: 20px;
+    background-color: #0097fc;
+    border: 1px solid gray;
+    height: 9px;
+    width: 9px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.l_container {
+    width: 100%;
+    max-width: 1000px;
+    top: 60%;
+    left: 10%;
+}
+
+.tittle_block {
+    padding-bottom: 47px;
+    font-weight: bold;
+    font-size: 28px;
+    color: #282e32;
+}
+
+.text_blue {
+    color: #009cfb;
+}
+
+
+.m_width {
+    margin: 74px 200px 3333px 200px;
+}
+
+.icon_block {
+    text-align: center;
+    font-size: 0;
+}
+
+.padding {
+    padding-bottom: 80%;
+}
+
+.icon_container {
+    max-height: 201px;
+    max-width: 320px;
+    border: 1px solid black;
+    margin-right: 40px;
+    text-align: center;
+    font-size: 0px;
+    vertical-align: top;
+    width: calc((100% - 100px) /3);
+    display: inline-block;
+    position: relative;
+}
+
+.icon_container:last-child {
+    margin-right: 0px;
+}
+
+.icon {
+    max-height: 201px;
+    max-width: 320px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("image_fortify/group_one.svg");
+}
+
+.icon_2 {
+    max-height: 201px;
+    max-width: 320px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("image_fortify/group_two.svg");
+}
+
+.icon_3 {
+    max-height: 201px;
+    max-width: 320px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("image_fortify/group_three.svg");
+}
+
+.width_image {
+    padding: 0px 68px 0px 58px;
+}
+
+.text_container {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-top: 42px;
+    
+}
+
+.text_icon {
+    min-width: 290px;
+    max-width: 290px;
+    max-height: 75px;
+    margin-right: 80px;
+    font-size: 15px;
+    text-align: left;
+    vertical-align: top;
+    display: inline-block;
+    width: calc((100% - 100px) /3);
+    color: #3b4044;
+}
+
+
+
