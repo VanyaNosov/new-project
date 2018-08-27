@@ -5,8 +5,8 @@ body {
 }
 
 .container_one {
-    padding-bottom: 30%;
-    margin-bottom: 285px;
+    height: auto;
+    padding-bottom: 30vw;
     background-color: black;
 }
 
@@ -60,7 +60,13 @@ body {
 }
 
 .width {
-    margin-left: 25%;;
+    max-width: 1002px;
+}
+
+.width {
+    width: calc(100% - 134px);
+    margin: 0 auto;
+    position: relative;
 }
 
 .tittle {
@@ -94,21 +100,40 @@ body {
     font-size: 13px;
 }
 
+.m_width {
+    max-width: 1002px;
+}
+
+.m_width {
+    padding-top: 25vw;
+    width: calc(100% - 134px);
+    margin: 0 auto;
+    position: relative;
+}
+
 .image_block {
-    position: absolute;
-    margin: 7vw 0 0 25%;
-    display: block;
-    overflow: auto;
-    box-shadow: 0 0 15px;
-    text-align: center;
-    height: 37vw;
-    background-image: url("image_fortify/Root.png"); 
-    width: 53vw; 
+    background-position:  50% 50%;
+    min-height: 100px;
+    width: calc(100vw - 150px);
+    max-width: 1040px;
+    top: 30vw;
+    left: 50%;
+    transform: translateX(-50%);
     background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    box-shadow: 0 0 15px;
+    background-image: url("image_fortify/Root.png"); 
+    
+}
+ 
+.padding_two {
+    padding-bottom: 65%;
 }
 
 .dots_block {
-    margin-bottom: 74px;
+    position: absolute;
+    margin-top: 2vw;
     width: 100%;
     text-align: center;
     
@@ -157,13 +182,7 @@ body {
     color: #009cfb;
 }
 
-
-.m_width {
-    margin: 74px 50px 134px 50px;
-}
-
 .icon_block {
-    text-align: center;
     font-size: 0;
 }
 
@@ -172,7 +191,6 @@ body {
 }
 
 .icon_container {
-    padding-bottom: 20px;
     max-height: 201px;
     max-width: 320px;
     border: 1px solid #eaeef1;
@@ -244,8 +262,7 @@ body {
 }
 
 .container_button {
-    margin-top: 134px;
-    border-top: 3px solid #f3f2f2;
+    padding-top: 300px;
 }
 
 .width_block {
@@ -329,9 +346,7 @@ body {
     background-color:   #E0FFFF;
 }
 
-.tittle_table {
-   
-    margin-top: 144px;
+.tittle_table {   
     color: #282e32;
     font-size: 28px; 
     font-weight: bold; 
@@ -368,12 +383,11 @@ body {
 }
 
 .container_for_table {
-    margin: 0px 50px 0px 50px;
+    padding-top: 144px;
 }
 
-.table {
-    margin: auto;
-    
+.table { 
+    margin-top: 95px;  
 }
 
 .text_table {
@@ -389,7 +403,7 @@ body {
 
 
 .container_bottom {
-    padding: 86px 197px 82px 203px;
+    padding: 86px 0px 82px 0px;
     background-color: #282e32;
 }
 
