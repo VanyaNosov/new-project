@@ -6,7 +6,7 @@ body {
 
 .container_one {
     height: auto;
-    padding-bottom: 30vw;
+    padding-bottom: 500px;
     background-color: black;
 }
 
@@ -32,7 +32,7 @@ body {
     vertical-align: top;
     color: white;
     font-size: 17px;
-    padding-left: 16px;
+    margin-left: 16px;
     display: inline-block;
 }
 
@@ -41,7 +41,7 @@ body {
     opacity: 0.7;
     color: #ffffff;
     font-size: 15px;  
-    padding-right: 39px;
+    margin-right: 39px;
     color: white;
 }
 
@@ -51,7 +51,7 @@ body {
 }
 
 .item:last-child {
-    padding: 0px;
+    margin: 0px;
 }
 
 .menu_block {
@@ -76,7 +76,7 @@ body {
 }
 
 .text_block {
-    margin-bottom: 42px;
+    padding-bottom: 42px;
     opacity: 0.52;
     font-size: 12px;
     color: #ffffff;
@@ -105,18 +105,17 @@ body {
 }
 
 .m_width {
-    padding-top: 25vw;
-    width: calc(100% - 134px);
+    padding: calc(74px + 20%) 0 0px;
     margin: 0 auto;
-    position: relative;
 }
 
 .image_block {
+    display: block;
     background-position:  50% 50%;
     min-height: 100px;
     width: calc(100vw - 150px);
     max-width: 1040px;
-    top: 30vw;
+    top: 55%;
     left: 50%;
     transform: translateX(-50%);
     background-repeat: no-repeat;
@@ -172,7 +171,7 @@ body {
 }
 
 .tittle_block {
-    padding-bottom: 47px;
+    margin-bottom: 50px;
     font-weight: bold;
     font-size: 28px;
     color: #282e32;
@@ -187,7 +186,7 @@ body {
 }
 
 .padding {
-    padding-bottom: 80%;
+    padding-bottom: 67%;
 }
 
 .icon_container {
@@ -252,6 +251,7 @@ body {
 
 
 .text_icon {
+    margin-top: 50px;
     min-width: 290px;
     max-width: 290px;
     max-height: 75px; 
@@ -262,7 +262,7 @@ body {
 }
 
 .container_button {
-    padding-top: 300px;
+    margin-top: 300px;
 }
 
 .width_block {
@@ -277,7 +277,7 @@ body {
 }
 
 .text_icon_two {
-    padding-left: 30px;
+    margin-left: 30px;
     display: inline-block;
 }
 
@@ -383,7 +383,7 @@ body {
 }
 
 .container_for_table {
-    padding-top: 144px;
+    margin-top: 144px;
 }
 
 .table { 
