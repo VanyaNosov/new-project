@@ -1,0 +1,64 @@
+
+body {
+    width: 300px;
+    height: 400px;
+}
+
+ol, ul {
+list-style: none; }
+
+table {
+border-collapse: collapse;
+border-spacing: 0; }
+
+.calculator {
+background-color: blue;
+width: 300px;
+height: 400px;
+}
+.b_output_field {
+height: 30%;
+position: relative;
+}
+.result {
+color: black;
+font-size: 40px;
+position: absolute;
+right: 1px;
+bottom: 0;
+width: 100%
+}
+.characters div {  
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+}
+.characters {
+height: 53px;
+text-align: right;
+}
+
+.characters:last-child  {
+    width: 299px;
+}
+
+.button {
+background-color: white;
+height: 50px;
+width: 50px;
+border-right: 1px solid #000;
+border-bottom: 1px solid #000;
+cursor: pointer;
+}
+.m_width {
+width: 158px;
+text-align: left;
+}
+.m_width_for_zero {
+width: 104px;
+}
+.symbol {
+background-color: yellow;
+}
+
