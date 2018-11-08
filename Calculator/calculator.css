@@ -14,7 +14,7 @@ border-spacing: 0; }
 .calculator {
 background-color: blue;
 width: 300px;
-height: 400px;
+height: 455px;
 }
 .b_output_field {
 height: 30%;
@@ -39,9 +39,24 @@ height: 53px;
 text-align: right;
 }
 
+.characters_id div {  
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+}
+.characters_id {
+    height: 53px;
+    text-align: right;
+}
+
 .characters:last-child  {
     width: 299px;
 }
+.characters_id {
+    
+}
+
 
 .button {
 background-color: white;
