@@ -1,48 +1,119 @@
-  
+
+
+//вообщем как я понял не 1 из моих методов не задействован, все делает равно, оно просо берет числа и слаживает их , не смотря на чы они задействованы в контексте plus минус пофиг , будет происходить сложение .
+
 class Сalculator {
     constructor() {
         this.field = document.getElementById("field"); 
+        this.number = 0;
         this.memoryCurrentNumber = 0; 
         this.memoreNewNumber = false;
         this.memoryPending = '';
         this.localOperationMemory = parseInt(this.field.value);
+
+        const numbers = document.getElementsByClassName("characters"); //characters это блок с моими цыфрами 
+        for(let i = 0; i < numbers.length; i++) {
+            numbers[i].addEventListener('click', (e) => {
+                if (this.memoreNewNumber) {
+                    if (!this.memoryCurrentNumber) {
+                        this.memoryCurrentNumber = e.target.textContent;
+                    } else {
+                        this.memoryCurrentNumber = `${this.memoryCurrentNumber}${e.target.textContent}`;
+                    }
+                } else {
+                    if (!this.number) {
+                        this.number = parseInt(e.target.textContent);
+                    } else {
+                        this.number = parseInt(`${this.number}${e.target.textContent}`);
+                    }
+                }
+
+                if(this.field.value === '0') {
+                    this.field.value = e.target.textContent;
+                } else {
+                    this.field.value = `${this.field.value}${e.target.textContent}`;
+                };
+            });
+          
+        }
+        
     }  
     
     getNum(number) {
       this.number = number;
     }
 
-    plus() { 
-        if (this.number) {         
-            this.localOperationMemory += this.number;
-          }         
+    plus() {
+        this.memoreNewNumber = true;
+        this.field.value = `${this.number}  + `;
+            if (this.number) {         
+                this.localOperationMemory += this.number;
+          }
+          return this.localOperationMemory; 
         
 }             
         
     minus() {   
-        if (this.number) {
+        this.memoreNewNumber = true;
+        this.field.value = `${this.number} - `;
+        if (this.number) {         
             this.localOperationMemory -= this.number;
-          }         
-    }
-
-    point() {
-        
-    }
-
-    result() {
-        if (this.number) {
-            this.field.value = this.localOperationMemory;  
-        } 
+          }  
+          return this.localOperationMemory; 
+                    
     }
 
     multiplication() {          
-            this.localOperationMemory *= this.number;   
+        this.memoreNewNumber = true;
+        this.field.value = `${this.number} * `;
+        if (this.number) {         
+            this.localOperationMemory *= this.number;
+          }  
+          return this.localOperationMemory; 
     } 
 
     division() {
-        if (this.number) {
-            this.localOperationMemory /= this.number;
-          }         
+        this.memoreNewNumber = true;
+        this.field.value = `${this.number} / `;
+        if (this.number) {         
+           this.localOperationMemory /= this.number;
+          }    
+        return this.localOperationMemory; 
+    }
+
+    result() {       
+        const plusResult = this.plus();
+        const minusResult = this.minus();
+        // const  multiplicationResult = this.multiplication();
+        // const divisionResult = this.division();
+        let finallyResult;
+
+        //    if (multiplicationResult) {
+        //     finallyResult = parseInt(this.number) * parseInt(this.memoryCurrentNumber);          
+        //     this.field.value = finallyResult;
+        //     this.localOperationMemory = finallyResult
+        // }
+
+        if (minusResult) {
+            finallyResult = parseInt(this.number) - parseInt(this.memoryCurrentNumber);
+            this.field.value = finallyResult;
+            this.localOperationMemory = finallyResult
+        }
+
+        if (plusResult) {
+            finallyResult = parseInt(this.number) + parseInt(this.memoryCurrentNumber);          
+            this.field.value = finallyResult;
+            this.localOperationMemory = finallyResult
+        }
+
+        // if (divisionResult) {
+        //     finallyResult = parseInt(this.number) / parseInt(this.memoryCurrentNumber);          
+        //     this.field.value = finallyResult;
+        //     this.localOperationMemory = finallyResult
+        // }
+
+
+
     }
 
     clear() {
@@ -85,18 +156,141 @@ const multiplication = document.getElementById("multiplication").addEventListene
 const clear = document.getElementById("clear").addEventListener("click", () => {
     user.clear();
 });
+ 
+ 
 
-const numbers = document.getElementsByClassName("characters");
-for(let i = 0; i < numbers.length; i++) {
-  numbers[i].addEventListener('click', (e) => {
-    if(this.field.value === '0') {
-        this.field.value = parseInt(e.target.textContent);
-    }else {
-        this.field.value += parseInt(e.target.textContent);
-    };
-  user.getNum(parseInt(e.target.textContent));  
-});
-} 
+
+
+
+
+        // if(parseInt(this.number) + parseInt(this.memoryCurrentNumber)) {
+        //     this.memoryPending = plusResult;
+        //     console.log(this.memoryPending);
+        // }
+
+        // if (this.result()) {
+        //     this.memoryPending = finallyResult;
+            
+        // }
+
+        // if (plusResult) {
+        //     this.memoryPending = finallyResult;
+        //     console.log(this.memoryPending)
+        // }
+
+
+            // if (finallyResult) {
+            //     this.localOperationMemory = finallyResult;
+
+            // }    
+            // if (memoryResult) {
+            //     this.memoryPending =  finallyResult; 
+            // }
+            // console.log(finallyResult);
+            // finallyResult = memoryResult ;           
+        
+
+       
+
+
+// class Сalculator {
+//     constructor() {
+//         this.field = document.getElementById("field"); 
+//         this.memoryCurrentNumber = 0; 
+//         this.memoreNewNumber = false;
+//         this.memoryPending = '';
+//         this.localOperationMemory = parseInt(this.field.value);
+//     }  
+    
+//     getNum(number) {
+//       this.number = number;
+//     }
+
+//     plus() { 
+//         if (this.number) {         
+//             this.localOperationMemory += this.number;
+//           }         
+        
+// }             
+        
+//     minus() {   
+//         if (this.number) {
+//             this.localOperationMemory -= this.number;
+//           }         
+//     }
+
+//     point() {
+        
+//     }
+
+//     result() {
+//         if (this.number) {
+//             this.field.value = this.localOperationMemory;  
+//         } 
+//     }
+
+//     multiplication() {          
+//             this.localOperationMemory *= this.number;   
+//     } 
+
+//     division() {
+//         if (this.number) {
+//             this.localOperationMemory /= this.number;
+//           }         
+//     }
+
+//     clear() {
+//         if (this.number) {
+//             this.field.value = this.number;
+//             this.localOperationMemory = this.memoryCurrentNumber;
+//           }         
+//           this.field.value = this.localOperationMemory;   
+        
+//     }
+
+//     characters() {
+
+//     }
+
+// }
+
+
+// let user = new Сalculator();
+// const plus = document.getElementById("plus").addEventListener("click", () => {
+//   user.plus();
+// });
+
+// const minus = document.getElementById("minus").addEventListener("click", () => {
+//     user.minus();
+//   });
+
+// const division = document.getElementById("division").addEventListener("click", () => {
+//     user.division();
+// });  
+
+// const result = document.getElementById("result").addEventListener("click", () => {
+//     user.result();
+//   });
+
+// const multiplication = document.getElementById("multiplication").addEventListener("click", () => {
+//     user.multiplication();
+// });
+
+// const clear = document.getElementById("clear").addEventListener("click", () => {
+//     user.clear();
+// });
+
+// const numbers = document.getElementsByClassName("characters");
+// for(let i = 0; i < numbers.length; i++) {
+//   numbers[i].addEventListener('click', (e) => {
+//     if(this.field.value === '0') {
+//         this.field.value = parseInt(e.target.textContent);
+//     }else {
+//         this.field.value += parseInt(e.target.textContent);
+//     };
+//   user.getNum(parseInt(e.target.textContent));  
+// });
+// } 
 
 
    
