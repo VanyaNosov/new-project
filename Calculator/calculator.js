@@ -1,3 +1,6 @@
+// добавить операции: возвидедние в степень, получение корня квадратного, деление без остачи, получение остачи от деления
+// пофиксить несколько точек в одном числе
+
 class Сalculator {
     constructor() {
         this.field = document.getElementById("field"); 
@@ -6,36 +9,41 @@ class Сalculator {
         this.argumentAfterPoint = '';
         this.operation = null;
         this.decimal = null;
+        this.keyListener = e => {
+            if (this.operation) {
+                this.secondArgument += e.target.textContent;
+            } else {
+                this.firstArgument += e.target.textContent;
+            }
+    
+            if (this.field.value === '0') {
+                this.field.value = e.target.textContent;    
+            }
+            else {
+                this.field.value += e.target.textContent;
+            }
+        }
 
         const numbers = document.getElementsByClassName("characters");
         for(let i = 0; i < numbers.length; i++) {
-            numbers[i].addEventListener('click', (e) => {
-                if (this.operation) {
-                    this.secondArgument += e.target.textContent;
-                } else {
-                    this.firstArgument += e.target.textContent;
-                }
-
-                if (this.decimal) {
-                  this.argumentAfterPoint += e.target.textContent;
-                }
-
-                if (this.field.value === '0') {
-                    this.field.value = e.target.textContent;    
-                }
-                else {
-                    this.field.value += e.target.textContent;
-                }
-            });
+            numbers[i].addEventListener('click', this.keyListener);
         }   
     }
 
     plus() {
-        this.operation = '+';
-        this.field.value += '+';
+        if (this.operation && this.operation !== '+') {
+            this.operation = '+';
+            this.field.value = this.field.value.slice(0, [this.field.value.length - 2]);
+            this.field.value += '+';
+        }
+
+        if (!this.operation) {
+            this.operation = '+';
+            this.field.value += '+';
+        }
     }             
-        
-    minus() {   
+
+    minus() {  
         this.operation = '-';
         this.field.value += ' - ';
     }
@@ -45,10 +53,24 @@ class Сalculator {
         this.field.value += ' × ';
      } 
 
-     division() {
+    division() {
         this.operation = '÷';
         this.field.value += '÷';
+        console.log("fsdfdfdfdfdfdfd")
      }
+
+    rate_x() {
+        this.operation = 'x';
+        this.field.value += '  x  ';
+    }
+
+    root() {
+        this.operation = '√';
+        this.field.value += '  √  ';
+        console.log("fsdfdfdfdfdfdfd")
+    }
+
+
 
     result() {
         let result = 0;
@@ -59,15 +81,24 @@ class Сalculator {
               break;
 
             case '-':
-              result = parseInt(this.firstArgument) - parseInt(this.secondArgument);
+              result = parseFloat(this.firstArgument) - parseFloat(this.secondArgument);
               break;
 
               case '×':
-              result = parseInt(this.firstArgument) * parseInt(this.secondArgument);
+              result = parseFloat(this.firstArgument) * parseFloat(this.secondArgument);
               break;
 
               case '÷':
-              result = parseInt(this.firstArgument) / parseInt(this.secondArgument);
+              result = parseFloat(this.firstArgument) / parseFloat(this.secondArgument);
+            //result = parseInt(this.firstArgument / this.secondArgument)
+              break;
+
+              case 'x':
+              result = Math.pow(this.firstArgument, this.secondArgument);
+              break;
+
+              case '√':
+              result = Math.sqrt(this.firstArgument);
               break;
 
             default:
@@ -89,43 +120,6 @@ class Сalculator {
     characters() {
 
     }
-
-    decimalOperation() {
-        this.decimal = ".";
-  
-        if (!this.operation && this.firstArgument.length) {
-          this.field.value = `${this.firstArgument}.${this.argumentAfterPoint}`;
-          this.firstArgument = `${this.firstArgument}.${this.argumentAfterPoint}`;
-          parseFloat(this.firstArgument);
-          console.log(this.argumentAfterPoint)
-          // this.decimal = null;
-        }
-        this.operation = null;
-    } 
-        // if (this.secondArgument) {
-        //     this.field.value = `${this.secondArgument}.${this.argumentAfterPoint}`;
-        //     this.secondArgument = `${this.secondArgument}.${this.argumentAfterPoint}`;
-        //   // this.field.value += `${this.secondArgument}`;
-        //   parseFloat(this.secondArgument);
-        // }
-    // decimalOperation() {
-    //   this.decimal = ".";
-    //   if (!this.operation && this.firstArgument.length) {
-    //     this.field.value = `${this.firstArgument}.${this.argumentAfterPoint}`;
-    //     this.firstArgument = `${this.firstArgument}.${this.argumentAfterPoint}`;
-    //     parseFloat(this.firstArgument);
-    //     // this.decimal = null;
-    //   }
-    // //   this.operation = null;
-
-    //   if (this.secondArgument.length) {
-    //     this.secondArgument = `${this.secondArgument}.${this.argumentAfterPoint}`;
-    //     // this.field.value += `${this.secondArgument}`;
-    //     parseFloat(this.secondArgument);
-    //   }
- 
-
-    // }
 
     lastOperation(lastOperation) {
       this.previousKeyType = lastOperation;
@@ -169,10 +163,65 @@ const clear = document.getElementById("clear").addEventListener("click", (e) => 
     user.lastOperation(e.target.textContent)
     user.clear();
   });
+
+  document.getElementById("rate_x").addEventListener("click", (e) => {
+    user.lastOperation(e.target.textContent)  
+    user.rate_x()
+  });
+        
+  document.getElementById("root").addEventListener("click", (e) => {
+    user.lastOperation(e.target.textContent)  
+    user.root()
+  });
   
   document.getElementById("point").addEventListener("click", (e) => {
-    user.decimalOperation();
+    user.keyListener(e);
   });
+
+
+    // if (this.decimal && !this.operation) {
+            //   this.argumentAfterPoint += e.target.textContent;
+            // }
+
+
+      // decimalOperation() {
+    //     this.decimal = ".";
+  
+    //     if (!this.operation && this.firstArgument.length) {
+    //       this.field.value = `${this.firstArgument}.${this.argumentAfterPoint}`;
+    //       this.firstArgument = `${this.firstArgument}.${this.argumentAfterPoint}`;
+    //       parseFloat(this.firstArgument);
+    //       console.log(this.argumentAfterPoint)
+    //       // this.decimal = null;
+    //     }
+    //     this.operation = null;
+
+    //     if (this.secondArgument) {
+    //         this.field.value = `${this.secondArgument}.${this.argumentAfterPoint}`;
+    //         this.secondArgument = `${this.secondArgument}.${this.argumentAfterPoint}`;
+    //         this.field.value += `${this.secondArgument}`;
+    //       parseFloat(this.secondArgument);
+    //     }
+    // } 
+        
+    // decimalOperation() {
+    //   this.decimal = ".";
+    //   if (!this.operation && this.firstArgument.length) {
+    //     this.field.value = `${this.firstArgument}.${this.argumentAfterPoint}`;
+    //     this.firstArgument = `${this.firstArgument}.${this.argumentAfterPoint}`;
+    //     parseFloat(this.firstArgument);
+    //     // this.decimal = null;
+    //   }
+    // //   this.operation = null;
+
+    //   if (this.secondArgument.length) {
+    //     this.secondArgument = `${this.secondArgument}.${this.argumentAfterPoint}`;
+    //     // this.field.value += `${this.secondArgument}`;
+    //     parseFloat(this.secondArgument);
+    //   }
+ 
+
+    // }
 
 
 

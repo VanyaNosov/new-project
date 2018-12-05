@@ -12,16 +12,16 @@ border-collapse: collapse;
 border-spacing: 0; }
 
 .calculator {
-background-color: blue;
-width: 300px;
-height: 455px;
+background-color: black;
+width: 400px;
+height: 555px;
 }
 .b_output_field {
 height: 30%;
 position: relative;
 }
 .result {
-color: black;
+color: orange;
 font-size: 40px;
 position: absolute;
 right: 1px;
@@ -35,11 +35,12 @@ width: 100%
     font-size: 18px;
 }
 .characters {
+     
 height: 53px;
 text-align: right;
 }
 
-.characters_id div {  
+.characters_id div { 
     display: inline-block;
     text-align: center;
     line-height: 50px;
@@ -62,8 +63,8 @@ text-align: right;
 background-color: white;
 height: 50px;
 width: 50px;
-border-right: 1px solid #000;
-border-bottom: 1px solid #000;
+border-right: 1px solid orange;
+border-bottom: 1px solid orange;
 cursor: pointer;
 }
 .m_width {
@@ -74,5 +75,22 @@ text-align: left;
 width: 104px;
 }
 .symbol {
-background-color: yellow;
+background-color: orange;
+}
+.rate_x2 {
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border-right: 1px solid orange;
+    border-bottom: 1px solid orange;
+    cursor: pointer;
+}
+
+.root {
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    border-right: 1px solid orange;
+    border-bottom: 1px solid orange;
+    cursor: pointer;
 }
