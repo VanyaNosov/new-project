@@ -22,18 +22,20 @@ class Сalculator {
             else {
                 this.field.value += e.target.textContent;
             }
+            
         }
 
         const numbers = document.getElementsByClassName("characters");
         for(let i = 0; i < numbers.length; i++) {
             numbers[i].addEventListener('click', this.keyListener);
         }   
+
     }
 
     plus() {
         if (this.operation && this.operation !== '+') {
             this.operation = '+';
-            this.field.value = this.field.value.slice(0, [this.field.value.length - 2]);
+            this.field.value = this.field.value.slice(0, [this.field.value.length - 1]);
             this.field.value += '+';
         }
 
@@ -43,31 +45,97 @@ class Сalculator {
         }
     }             
 
-    minus() {  
-        this.operation = '-';
-        this.field.value += ' - ';
+    minus() {
+        if (this.operation && this.operation !== '-') {
+            this.operation = '-';
+            this.field.value = this.field.value.slice(0, [this.field.value.length - 1]);
+            this.field.value += '-';
+        }
+
+        if (!this.operation) {
+            this.operation = '-';
+            this.field.value += '-';
+        }  
+        // this.operation = '-';
+        // this.field.value += ' - ';
     }
 
-    multiplication() {          
-        this.operation = '×';
-        this.field.value += ' × ';
+    multiplication() {
+        if (this.operation && this.operation !== '×') {
+            this.operation = '×';
+            this.field.value = this.field.value.slice(0, [this.field.value.length - 1]);
+            this.field.value += '×';
+        }
+
+        if (!this.operation) {
+            this.operation = '×';
+            this.field.value += '×';
+        }          
+        // this.operation = '×';
+        // this.field.value += ' × ';
      } 
 
     division() {
-        this.operation = '÷';
-        this.field.value += '÷';
-        console.log("fsdfdfdfdfdfdfd")
+        if (this.operation && this.operation !== '÷') {
+            this.operation = '÷';
+            this.field.value = this.field.value.slice(0, [this.field.value.length - 1]);
+            this.field.value += '÷';
+        }
+
+        if (!this.operation) {
+            this.operation = '÷';
+            this.field.value += '÷';
+        }
+        // this.operation = '÷';
+        // this.field.value += '÷';
+        // console.log("fsdfdfdfdfdfdfd")
      }
 
     rate_x() {
-        this.operation = 'x';
-        this.field.value += '  x  ';
+        if (this.operation && this.operation !== '+') {
+            this.operation = '+';
+            this.field.value = this.field.value.slice(0, [this.field.value.length - 1]);
+            this.field.value += '+';
+        }
+
+        if (!this.operation) {
+            this.operation = '+';
+            this.field.value += '+';
+        }
+        // this.operation = 'x';
+        // this.field.value += '  x  ';
     }
 
     root() {
-        this.operation = '√';
-        this.field.value += '  √  ';
-        console.log("fsdfdfdfdfdfdfd")
+        if (this.operation && this.operation !== '√') {
+            this.operation = '√';
+            this.field.value = this.field.value.slice(0, [this.field.value.length - 1]);
+            this.field.value += '√';
+        }
+
+        if (!this.operation) {
+            this.operation = '√';
+            this.field.value += '√';
+        }
+        // this.operation = '√';
+        // this.field.value += '  √  ';
+        // console.log("fsdfdfdfdfdfdfd")
+    }
+
+    remainder() {
+        if (this.operation && this.operation !== '%') {
+            this.operation = '%';
+            this.field.value = this.field.value.slice(0, [this.field.value.length - 1]);
+            this.field.value += '%';
+        }
+
+        if (!this.operation) {
+            this.operation = '%';
+            this.field.value += '%';
+        }
+        // this.operation = '%';
+        // this.field.value += '  %  ';
+        // console.log("fsdfdfdfdfdfdfd")
     }
 
 
@@ -89,7 +157,8 @@ class Сalculator {
               break;
 
               case '÷':
-              result = parseFloat(this.firstArgument) / parseFloat(this.secondArgument);
+               result = Math.floor(this.firstArgument) / Math.floor(this.secondArgument);
+            //   result = parseFloat(this.firstArgument) / parseFloat(this.secondArgument);
             //result = parseInt(this.firstArgument / this.secondArgument)
               break;
 
@@ -99,6 +168,10 @@ class Сalculator {
 
               case '√':
               result = Math.sqrt(this.firstArgument);
+              break;
+
+              case '%':
+              result = parseFloat(this.firstArgument) % parseFloat(this.secondArgument);
               break;
 
             default:
@@ -173,6 +246,12 @@ const clear = document.getElementById("clear").addEventListener("click", (e) => 
     user.lastOperation(e.target.textContent)  
     user.root()
   });
+
+  document.getElementById("remainder").addEventListener("click", (e) => {
+    user.lastOperation(e.target.textContent)  
+    user.remainder()
+  });
+
   
   document.getElementById("point").addEventListener("click", (e) => {
     user.keyListener(e);
