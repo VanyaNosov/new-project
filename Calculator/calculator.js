@@ -92,15 +92,15 @@ class Сalculator {
      }
 
     rate_x() {
-        if (this.operation && this.operation !== '+') {
-            this.operation = '+';
+        if (this.operation && this.operation !== 'X') {
+            this.operation = 'X';
             this.field.value = this.field.value.slice(0, [this.field.value.length - 1]);
-            this.field.value += '+';
+            this.field.value += 'X';
         }
 
         if (!this.operation) {
-            this.operation = '+';
-            this.field.value += '+';
+            this.operation = 'X';
+            this.field.value += 'X';
         }
         // this.operation = 'x';
         // this.field.value += '  x  ';
@@ -162,7 +162,7 @@ class Сalculator {
             //result = parseInt(this.firstArgument / this.secondArgument)
               break;
 
-              case 'x':
+              case 'X':
               result = Math.pow(this.firstArgument, this.secondArgument);
               break;
 
