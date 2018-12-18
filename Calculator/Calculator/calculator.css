@@ -13,9 +13,8 @@ border-spacing: 0; }
 
 .calculator {
 background-color: black;
-width: 382px;
-height: 500px;
-/* height: 555px; */
+width: 400px;
+height: 555px;
 }
 .b_output_field {
 height: 30%;
@@ -25,7 +24,7 @@ position: relative;
 color: orange;
 font-size: 40px;
 position: absolute;
-left: 1px;
+right: 1px;
 bottom: 0;
 width: 100%
 }
@@ -69,8 +68,7 @@ border-bottom: 1px solid orange;
 cursor: pointer;
 }
 .m_width {
-    width: 187.5px;
-/* width: 158px; */
+width: 158px;
 text-align: left;
 }
 .m_width_for_zero {

@@ -12,68 +12,36 @@ class Сalculator {
         this.operation = null;
         this.decimal = null;
         this.keyListener = e => {
-
-                if (
-                    (e.target.textContent === '.' && this.firstArgument.indexOf('.') > -1 && !this.secondArgument) ||
-                    (e.target.textContent === '.' && this.secondArgument.indexOf('.') > -1 && this.secondArgument) ||
-                    (this.field.value[this.field.value.length - 1] === '.' && e.target.textContent === '.')
-                ) {
-                    return;
+            const { textContent } = e.target;
+            
+            if (
+                (textContent === '.' && this.firstArgument.indexOf('.') > -1 && !this.secondArgument) ||
+                (textContent === '.' && this.secondArgument.indexOf('.') > -1 && this.secondArgument) ||
+                (this.field.value[this.field.value.length - 1] === '.' && textContent === '.')
+            ) {
+                return;
             }
-
+            
             if (this.operation) {
-                this.secondArgument += e.target.textContent;
-            } else {
-                this.firstArgument += e.target.textContent;
+                this.secondArgument += textContent;
+            } else  {
+                this.firstArgument += textContent;
             }
     
-            if (this.field.value === '0') {
-                this.field.value = e.target.textContent;    
+            if (this.field.value === '0' && textContent !== '.') {
+                this.field.value = textContent;    
+            } else {
+                this.field.value += textContent;
             }
-            else {
-                this.field.value += e.target.textContent;
-            }
-
-            
-
-            
-
-            // if (this.field.value === '0' && e.target.textContent !== '.') {
-            //     this.field.value = e.target.textContent;    
-            // } else {
-            //     this.field.value += e.target.textContent;
-            // }
-
-            
-            // if (this.field.value === '0' && e.target.textContent !== '.') {
-            //     this.field.value = e.target.textContent;    
-            // } else {
-            //     this.field.value += e.target.textContent;
-            // }
             
         }
 
-        const numbers = document.getElementsByClassName("number button");
+        const numbers = document.getElementsByClassName("number");
         for(let i = 0; i < numbers.length; i++) {
             numbers[i].addEventListener('click', this.keyListener);
-        }
+        }   
 
-        
-
-        window.onload = function () {
-            window.onkeydown = function (e) {
-                console.log(e.keyCode)
-                if(e.keyCode === 8) {
-                    this.field.value = this.field.value.substring(0,  this.field.value.length- 1)
-                }
-                
-            }
     }
-
-    var OSName = "Unknown OS";
-    if (navigator.userAgent.indexOf("Win")) OSName = "Windows";
-    console.log('Your OS: ' + OSName);
-}
 
     plus() {
         if (this.operation && this.operation !== '+') {
@@ -99,6 +67,8 @@ class Сalculator {
             this.operation = '-';
             this.field.value += '-';
         }  
+        // this.operation = '-';
+        // this.field.value += ' - ';
     }
 
     multiplication() {
@@ -112,6 +82,8 @@ class Сalculator {
             this.operation = '×';
             this.field.value += '×';
         }          
+        // this.operation = '×';
+        // this.field.value += ' × ';
      } 
 
     division() {
@@ -125,6 +97,9 @@ class Сalculator {
             this.operation = '÷';
             this.field.value += '÷';
         }
+        // this.operation = '÷';
+        // this.field.value += '÷';
+        // console.log("fsdfdfdfdfdfdfd")
      }
 
     rate_x() {
@@ -138,6 +113,8 @@ class Сalculator {
             this.operation = 'X';
             this.field.value += 'X';
         }
+        // this.operation = 'x';
+        // this.field.value += '  x  ';
     }
 
     root() {
@@ -151,6 +128,9 @@ class Сalculator {
             this.operation = '√';
             this.field.value += '√';
         }
+        // this.operation = '√';
+        // this.field.value += '  √  ';
+        // console.log("fsdfdfdfdfdfdfd")
     }
 
     remainder() {
@@ -164,11 +144,11 @@ class Сalculator {
             this.operation = '%';
             this.field.value += '%';
         }
+        // this.operation = '%';
+        // this.field.value += '  %  ';
+        // console.log("fsdfdfdfdfdfdfd")
     }
 
-    diligence() {
-        this.field.value = this.field.value.substring(0,  this.field.value.length- 1)
-    }
 
 
     result() {
@@ -189,6 +169,8 @@ class Сalculator {
 
               case '÷':
                result = (Math.floor(this.firstArgument) / Math.floor(this.secondArgument)).toFixed(2);
+            //   result = parseFloat(this.firstArgument) / parseFloat(this.secondArgument);
+            //result = parseInt(this.firstArgument / this.secondArgument)
               break;
 
               case 'X':
@@ -219,7 +201,6 @@ class Сalculator {
         this.firstArgument = ''
     }
 
- 
     characters() {
 
     }
@@ -234,233 +215,72 @@ class Сalculator {
 
 }
 
+
 let user = new Сalculator();
 
-let operationBtn = document.getElementsByClassName("characters_id");
-for(let i = 0; i < operationBtn.length; i++) {
-    operationBtn[i].addEventListener('click', (e) => {
-        document.getElementById("point").addEventListener("click", (e) => {
-            user.keyListener(e);
-           });
-
-        if(e.target.textContent === '+'){
-            user.lastOperation(e.target.textContent)
+[1, 2, 3].forEach((el) => {
+    document.getElementById(el).addEventListener("click", (e) => {
+        user.lastOperation(e.target.textContent)
+        if (el === 'plus') {
             user.plus();
             return;
         }
-
-        if(e.target.textContent === '-'){
-            user.lastOperation(e.target.textContent)
-            user.minus();
-            return;
-        }
-
-        if(e.target.textContent === '(--'){
-            user.lastOperation(e.target.textContent)
-            user.diligence();
-            return;
-        }
-
-        if(e.target.textContent === '×'){
-            user.lastOperation(e.target.textContent)
-            user.multiplication();
-            return;
-        }
-
-        if(e.target.textContent === '÷'){
-            user.lastOperation(e.target.textContent)
-            user.division();
-            return;
-        }
-
-        if(e.target.textContent === 'X'){
-            user.lastOperation(e.target.textContent)
-            user.rate_x();
-            return;
-        }
-
-        if(e.target.textContent === '√'){
-            user.lastOperation(e.target.textContent)
-            user.root();
-            return;
-        }
-
-        if(e.target.textContent === '%'){
-            user.lastOperation(e.target.textContent)
-            user.remainder();
-            return;
-        }
-
-        if(e.target.textContent === 'CLEAR'){
-            user.lastOperation(e.target.textContent)
-            user.clear();
-            return;
-        }
-
-        if(e.target.textContent === '='){
-            user.lastOperation(e.target.textContent)
-            user.result();
-            return;
-        }
-
-        if(e.target.textContent === '.'){
-            user.keyListener(e);
-            return;
-        }
-
+        // user.plus();
     })
-}
-console.log(operationBtn)
+})
 
-// const call = document.getElementsByClassName("characters id");
-//     document.getElementById(el).addEventListener("click", (e) => {
-//         user.lastOperation(e.target.textContent)
-//         if (el === 'plus') {
-//             user.plus();
-//             return;
-//         }
-//     });
-// user.lastOperation(e.target.textContent)
-// for(let i = 0; i < call.length; i++) {
-//     call[i].addEventListener('click');
-// }   
+const plus = document.getElementById("plus").addEventListener("click", (e) => {
+  user.lastOperation(e.target.textContent)
+  user.plus();
+});
 
+const minus = document.getElementById("minus").addEventListener("click", (e) => {
+  user.lastOperation(e.target.textContent)
+  user.minus();
+});
 
+const division = document.getElementById("division").addEventListener("click", (e) => {
+  user.lastOperation(e.target.textContent)
+  user.division();
+});  
 
-// function call (el) {
-//     document.getElementById(el).addEventListener("click", (e) => {
-//         user.lastOperation(e.target.textContent)
-//         if (el === 'plus') {
-//             user.plus();
-//             return;
+const result = document.getElementById("result").addEventListener("click", (e) => {
+  user.lastOperation(e.target.textContent)
+  user.result();
+});
 
-//         }
-//     })
-// } 
-// call()
+const multiplication = document.getElementById("multiplication").addEventListener("click", (e) => {
+  user.lastOperation(e.target.textContent)
+  user.multiplication();
+});
 
-// [1, 2, 3].forEach((el) => {
-//     document.getElementById(el).addEventListener("click", (e) => {
-//         user.lastOperation(e.target.textContent)
-//         if (el === 'plus') {
-//             user.plus();
-//             return;
-//         }
-//     })
-// })
+const clear = document.getElementById("clear").addEventListener("click", (e) => {
+    user.lastOperation(e.target.textContent)
+    user.clear();
+  });
 
-
-
-// let user = new Сalculator();
-
-// const plus = document.getElementById("plus").addEventListener("click", (e) => {
-//   user.lastOperation(e.target.textContent)
-//   user.plus();
-// });
-
-// const minus = document.getElementById("minus").addEventListener("click", (e) => {
-//   user.lastOperation(e.target.textContent)
-//   user.minus();
-// });
-
-// const division = document.getElementById("division").addEventListener("click", (e) => {
-//   user.lastOperation(e.target.textContent)
-//   user.division();
-// });  
-
-// const result = document.getElementById("result").addEventListener("click", (e) => {
-//   user.lastOperation(e.target.textContent)
-//   user.result();
-// });
-
-// const multiplication = document.getElementById("multiplication").addEventListener("click", (e) => {
-//   user.lastOperation(e.target.textContent)
-//   user.multiplication();
-// });
-
-// const clear = document.getElementById("clear").addEventListener("click", (e) => {
-//     user.lastOperation(e.target.textContent)
-//     user.clear();
-//   });
-
-//   document.getElementById("rate_x").addEventListener("click", (e) => {
-//     user.lastOperation(e.target.textContent)  
-//     user.rate_x()
-//   });
+  document.getElementById("rate_x").addEventListener("click", (e) => {
+    user.lastOperation(e.target.textContent)  
+    user.rate_x()
+  });
         
-//   document.getElementById("root").addEventListener("click", (e) => {
-//     user.lastOperation(e.target.textContent)  
-//     user.root()
-//   });
+  document.getElementById("root").addEventListener("click", (e) => {
+    user.lastOperation(e.target.textContent)  
+    user.root()
+  });
 
-//   document.getElementById("remainder").addEventListener("click", (e) => {
-//     user.lastOperation(e.target.textContent)  
-//     user.remainder()
-//   });
-
-//   document.getElementById("diligence").addEventListener("click", (e) => {
-//     user.lastOperation(e.target.textContent)  
-//     user. diligence()
-//   });
+  document.getElementById("remainder").addEventListener("click", (e) => {
+    user.lastOperation(e.target.textContent)  
+    user.remainder()
+  });
 
   
-//   document.getElementById("point").addEventListener("click", (e) => {
-//     user.keyListener(e);
-//   });
-
- // result() {
-    //     let result = 0;
-  
-    //     switch (this.operation) {
-    //         case '+':
-    //           result = parseFloat(this.firstArgument) + parseFloat(this.secondArgument);
-    //           break;
-
-    //         case '-':
-    //           result = parseFloat(this.firstArgument) - parseFloat(this.secondArgument);
-    //           break;
-
-    //           case '×':
-    //           result = parseFloat(this.firstArgument) * parseFloat(this.secondArgument);
-    //           break;
-
-    //           case '÷':
-    //            result = Math.floor(this.firstArgument) / Math.floor(this.secondArgument);
-    //         //   result = parseFloat(this.firstArgument) / parseFloat(this.secondArgument);
-    //         //result = parseInt(this.firstArgument / this.secondArgument)
-    //           break;
-
-    //           case 'X':
-    //           result = Math.pow(this.firstArgument, this.secondArgument);
-    //           break;
-
-    //           case '√':
-    //           result = Math.sqrt(this.firstArgument);
-    //           break;
-
-    //           case '%':
-    //           result = parseFloat(this.firstArgument) % parseFloat(this.secondArgument);
-    //           break;
-
-    //         default:
-    //           console.warn('Error')
-    //     }
-    //     this.field.value = result;
-    //     this.operation = null;
-    //     this.secondArgument = '';
-    //     this.firstArgument = result
-    // }
-    
+  document.getElementById("point").addEventListener("click", (e) => {
+    user.keyListener(e);
+  });
 
 
-
-
-
-
-
-
-
-// if (this.decimal && !this.operation) {
+    // if (this.decimal && !this.operation) {
             //   this.argumentAfterPoint += e.target.textContent;
             // }
 
