@@ -1,7 +1,8 @@
-// попробывать избавиться от лютых проверок
 // backspace кнопка (стирает последний символ) 
 // дополнительно - fortify landing добавить обнаружение операционной системы
+// попробывать избавиться от лютых проверок
 // дополнительно - уличшить способо добавлиния EvenListener для операций
+
 
 class Сalculator {
     constructor() {
@@ -34,29 +35,14 @@ class Сalculator {
                 this.field.value += e.target.textContent;
             }
 
-            
-
-            
-
-            // if (this.field.value === '0' && e.target.textContent !== '.') {
-            //     this.field.value = e.target.textContent;    
-            // } else {
-            //     this.field.value += e.target.textContent;
-            // }
-
-            
-            // if (this.field.value === '0' && e.target.textContent !== '.') {
-            //     this.field.value = e.target.textContent;    
-            // } else {
-            //     this.field.value += e.target.textContent;
-            // }
-            
+    
         }
 
         const numbers = document.getElementsByClassName("number button");
         for(let i = 0; i < numbers.length; i++) {
             numbers[i].addEventListener('click', this.keyListener);
         }
+    
 
         
 
