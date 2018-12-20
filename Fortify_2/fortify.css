@@ -29,6 +29,7 @@ body {
 }
 
 .text_logo {
+    font-weight: 600;
     vertical-align: top;
     color: white;
     font-size: 17px;
@@ -132,7 +133,7 @@ body {
 
 .dots_block {
     position: absolute;
-    margin-top: 2vw;
+    padding-top: 2vw;
     width: 100%;
     text-align: center;
     
