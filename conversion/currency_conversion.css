@@ -1,0 +1,22 @@
+.vanya {
+    color: red;
+}
+
+.button {
+    margin-left: 50px;
+    cursor: pointer;
+    display: inline-block;
+    padding: 8px 15px 11px 15px;
+    border-radius: 2px;
+    background-color: red;
+}
+
+.button:hover {
+    transition: 0.3s;
+    opacity: 0.9;
+}
+
+.text_button {  
+    color: white;
+    font-size: 13px;
+}
