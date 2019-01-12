@@ -17,9 +17,6 @@ function conversion () {
     let sel = document.getElementById("menu");
     let options = document.getElementById("menu_block").value;
     console.log(options)
-    console.log(menu)
-    console.log(menu1)
-    console.log(menu2)
     
 };
 
@@ -96,3 +93,30 @@ conversion();
 
 
 
+// async function functionSome () {
+//     const response = await fetch('https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11')
+  
+// const json = await response.json();
+// console.log(json)
+ 
+// let dollarPrice = null;
+
+//     for(var i = 0; i < json.length; i++){
+//         if(json[i].ccy === "USD"){
+//             dollarPrice = json[i].buy;
+//         };
+//     };
+//     return dollarPrice;
+// };
+
+
+// async function conversion (dollarPrice) { 
+//     const result = await functionSome();
+//     console.log(result);
+//     let convertion = document.getElementById("Converter");
+//     let dollar_conversion = document.getElementById("convertion_dollar").value = innerHTML = parseInt(dollarPrice) * parseInt(result);
+//         console.log(dollar_conversion)
+//         console.log(dollarPrice);
+//         console.log(result);
+       
+// };
