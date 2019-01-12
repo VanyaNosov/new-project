@@ -20,6 +20,7 @@ function conversion () {
     console.log(menu)
     console.log(menu1)
     console.log(menu2)
+    
 };
 
 function funk () {
