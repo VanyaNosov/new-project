@@ -1,5 +1,3 @@
-
-
 let dollarPrice = null;
 function arrayJson (json) {
     console.log(json)
